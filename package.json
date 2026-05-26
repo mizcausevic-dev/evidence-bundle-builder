@@ -1,0 +1,61 @@
+{
+  "name": "evidence-bundle-builder",
+  "version": "0.1.0",
+  "description": "TS library + CLI that assembles a spec-conforming manifest.json for an evidence bundle. Scans content/, computes sha256 + size per file, threads bundle / relationships / provenance / signature blocks through, validates id and path patterns. Companion stamper to evidence-bundle-spec.",
+  "type": "module",
+  "license": "AGPL-3.0-or-later",
+  "author": "mizcausevic-dev",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mizcausevic-dev/evidence-bundle-builder"
+  },
+  "keywords": [
+    "evidence",
+    "provenance",
+    "audit",
+    "compliance",
+    "manifest",
+    "sha256",
+    "ai-governance",
+    "kinetic-gain-suite",
+    "typescript"
+  ],
+  "bin": {
+    "evidence-bundle-builder": "dist/cli.js"
+  },
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "lint": "eslint .",
+    "test": "vitest run",
+    "coverage": "vitest run --coverage",
+    "demo": "tsx scripts/demo.ts",
+    "prepublishOnly": "npm run build"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.17.0",
+    "@types/node": "^22.10.0",
+    "@vitest/coverage-v8": "^2.1.8",
+    "eslint": "^9.17.0",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2",
+    "typescript-eslint": "^8.18.0",
+    "vitest": "^2.1.8"
+  }
+}
